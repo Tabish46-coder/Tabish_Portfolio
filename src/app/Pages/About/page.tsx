@@ -3,10 +3,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaYoutube, FaTwitter } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
+import { useRouter } from 'next/navigation';
 
 export default function Aboutpage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
+  const router = useRouter();
   const handleMouseMove = (event: { clientX: any; clientY: any; }) => {
     setMousePosition({ x: event.clientX, y: event.clientY });
   };
@@ -48,8 +49,8 @@ export default function Aboutpage() {
             <div className="[writing-mode:vertical-lr] uppercase tracking-widest text-gray-500 cursor-pointer hover:text-black">
               Conditions
             </div>
-            <div className="[writing-mode:vertical-lr] uppercase tracking-widest text-gray-500 cursor-pointer hover:text-black">
-              Portfolio
+            <div className="[writing-mode:vertical-lr] uppercase tracking-widest text-gray-500 cursor-pointer hover:text-black" onClick={() => router.push('/Pages/Portfolio')}>
+              Expertise
             </div>
             <div className="[writing-mode:vertical-lr] uppercase font-bold text-black">
               About
